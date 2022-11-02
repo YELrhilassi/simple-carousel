@@ -56,8 +56,8 @@ export default function App() {
     });
   };
 
-  // the class is changed first, which causes the carousel to slide first, and after the animation is ended the item list then is shifted
-  // the setMoveClass get rest to allow for next input
+  // the class is changed first, which causes the carousel to slide first, and after the animation is ended then the item list is shifted
+  // the setMoveClass get reset to allow for next input
 
   return (
     <div className="container">
