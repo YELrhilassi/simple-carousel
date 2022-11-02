@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*-----------------------*/
+.container {
+  width: 60%;
+  margin: 20vw auto;
+  overflow: hidden;
+  border: solid 1px red;
+}
+/*-----------------------*/
+
+/*-----------------------*/
+.carousel {
+  display: flex;
+  gap: 1%;
+
+  /* border: solid 1px blue; */
+}
+/*-----------------------*/
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 24.26%; /* this is weird, but the width of the cards must respect the total width of the .carousel so that the movement can be smooth*/
+  height: 10vw;
+  padding: 2rem;
+
+  background-color: crimson;
+
+  transform: translateX(
+    -104%
+  ); /*cards are moved to the left so that when animating the carousel to right there wouldn't be an empty spot*/
+}
+
+.card p {
+  color: white;
+}
+/*-----------------------*/
+
+/*----------Animation Classes-------------*/
+.back {
+  animation-name: back;
+  animation-duration: 0.6s;
+}
+.next {
+  animation-name: next;
+  animation-duration: 0.6s;
+}
+
+@keyframes back {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(
+      calc(0px - 25.2%)
+    ); /* this is also weird but the value accommodate the gap of the cards*/
+  }
+}
+
+@keyframes next {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(calc(0px + 25.2%));
+  }
+}
+/*-----------------------------*/
+
+.control {
+  display: flex;
+  justify-content: center;
+  gap: 2%;
+
+  margin-top: 1vw;
+}
